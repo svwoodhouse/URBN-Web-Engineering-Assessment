@@ -13,47 +13,9 @@ body {
   margin: 0px;
 }
 
-.header-container {
-  background-color: rgb(27, 184, 111);
-  color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-
+.main-page{
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-
-  position: static;
-  height: 60px;
-}
-
-.company-logo-container {
-  width: 100px;
-}
-
-.company-logo {
-  margin-top: 5px;
-  width: 100%;
-}
-
-.search-button {
-  height: 100%;
-  width: 35px
-}
-
-.search-bar-form {
-  display: flex;
-  align-content: center;
-}
-
-.cart-container {
-  width: 100px;
-}
-
-.cart-image {
-  width: 100%;
 }
 
 .card-title {

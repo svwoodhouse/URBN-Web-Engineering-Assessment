@@ -10,24 +10,32 @@ export interface Products {
 }
 
 const Main: React.FC = () => {
-    const [products, setProducts] = useState<Products>({
+    const [products, setProducts] = useState<Products[]>([{
         images: [],
         title: '',
         brand: '',
         price: 0,
         rating: 0
-    })
+    }])
+
     useEffect(() =>{
         async function fetchData(){
-            const response = await fetch('https://dummyjson.com/products/1')
+            const response = await fetch('https://dummyjson.com/products')
             const data = await response.json()
-            setProducts(data)
+            console.log(data)
+            setProducts([...data.products])
         }
         fetchData()        
     },[])
+
+    
     return (
-        <div>
-            <Card {...products}/>
+        <div className="main-page">
+            {
+                products.map((product)=>{
+                    return (<Card {...product}/>)
+                })
+            }
         </div>
     )
 }
