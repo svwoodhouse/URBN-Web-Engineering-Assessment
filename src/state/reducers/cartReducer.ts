@@ -70,6 +70,9 @@ const reducer = (state: CartState = initialState, action: Action ) => {
                 if(quantity > 1){
                     state.cartNumber--;
                     state.cartItems[action.payload].quantity--;
+                }else {
+                    state.cartNumber--;
+                    state.cartItems.splice(action.payload, 1)
                 }
                 return{
                     ...state,
